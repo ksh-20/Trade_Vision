@@ -66,6 +66,7 @@ Stock Project/
 ### Backend Setup
 
 1. **Install Python dependencies**:
+   ``` bash
    pip install -r requirements.txt
    ```
 
@@ -79,30 +80,39 @@ Stock Project/
 
 4. **Run data collection**:
    # Fetch stock data
+   ``` bash
    python fetch.py
+   ```
    
    # Calculate technical indicators
+   ``` bash
    python indicators.py
+   ```
    
    # Train ML model
+   ``` bash
    python ml_model.py
    ```
 
 5. **Start Flask API**:
+   ``` bash
    python app.py
    ```
 
 ### Frontend Setup
 
 1. **Navigate to frontend directory**:
+   ``` bash
    cd frontend
    ```
 
 2. **Install dependencies**:
+   ``` bash
    npm install
    ```
 
 3. **Start development server**:
+   ``` bash
    npm start
    ```
 
