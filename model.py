@@ -89,12 +89,12 @@ class TradingMLModel:
         all_features = []
         all_labels = []
         
-        for ticker in tickers[:10]:  # Use first 10 stocks for training
+        for ticker in tickers[:10]:  # Using first 10 stocks for training
             try:
                 # Get technical indicator data
                 df = pd.read_sql(f"SELECT * FROM {ticker}_MA ORDER BY timestamp", mydb)
                 
-                if len(df) < 100:  # Skip stocks with insufficient data
+                if len(df) < 100:  # Skipping stocks with insufficient data
                     continue
                 
                 feature_df = self.prepare_features(df)
@@ -104,7 +104,7 @@ class TradingMLModel:
                 combined = pd.concat([feature_df, pd.Series(labels, name='label')], axis=1)
                 combined = combined.dropna()
                 
-                if len(combined) > 50:  # Only use if we have enough data
+                if len(combined) > 50: 
                     all_features.append(combined.drop('label', axis=1))
                     all_labels.extend(combined['label'])
                 
